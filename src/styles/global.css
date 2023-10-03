@@ -14,6 +14,16 @@
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
+  /* wiki colors */
+  --text-color-wiki: #009c7b;
+  --text-color-wiki-visited: #008064;
+  --text-color-invalid-wikilink: #8c8c8c;
+  /* for dark themes */
+  /* --text-color-wiki: #a0e4a0;
+  --text-color-wiki-visited: #90f390;
+  --text-color-invalid-wikilink: #8c8c8c;
+
+  --background-color: #27262b; */
 }
 @font-face {
 	font-family: 'Atkinson';
@@ -151,4 +161,126 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* tag map / semantic tree */
+
+.branch {
+  color: var(--text-color-wiki);
+  list-style: "#";
+}
+
+/******************/
+/* wikiref styles */
+/******************/
+
+/* wikiattr */
+
+/* attrbox */
+aside.attrbox {
+  text-align: center;
+  border: 1px double #ccc;
+  color: #4F534F;
+  border-radius: 25px;
+  border-spacing: 1em;
+  /* @noflip */
+  margin: 0.5em;
+  padding: 0.2em;
+  /* @noflip */
+  float: right;
+}
+span.attrbox-title {
+  margin: 0.5em;
+  color: #4F534F;
+}
+/* from: https://www.the-art-of-web.com/css/format-dl/ */
+dl {
+  margin: 0.5em;
+}
+dt {
+  width: 100px;
+  float: left;
+  clear: left;
+  text-align: right;
+  font-weight: bold;
+}
+dt::after {
+  content: ":";
+}
+dd {
+  margin: 0 0 0 110px;
+  padding: 0 0 0.5em 0;
+}
+
+/* (internal) wiki links */
+a.wiki[href] {
+  color: var(--text-color-wiki);
+}
+a.wiki[href]:visited {
+  color: var(--text-color-wiki-visited);
+}
+a.invalid {
+  color: var(--text-color-invalid-wikilink);
+  cursor: help;
+}
+
+/* !wikiembed */
+
+.embed-wrapper {
+  border: 1px solid #535353;
+  border-radius: 6px;
+  padding: 5px 20px 15px 20px;
+  margin: 0 20px;
+  position: relative;
+}
+.embed-title {
+  height: 36px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 26px;
+  line-height: 42px;
+  top: 5px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-weight: 900;
+}
+.embed-link {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  cursor: pointer;
+}
+.embed-link-icon {
+  text-decoration: none;
+}
+.link-icon {
+  font-size: 18px;
+  color: #535353;
+}
+.link-icon::before{
+  content: "🔗";
+}
+.embed-content {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+/* embed media */
+.embed-media {
+  margin: 0 auto;
+}
+.embed-audio {
+  height: 100%;
+  width: 100%;
+}
+.embed-image {
+  height: 50%;
+  width: 50%;
+}
+.embed-video {
+  height: 75%;
+  width: 75%;
 }

@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import { SITE_TITLE } from '../consts';
+import { bonsai } from '../wikibonsai/semtree';
+
+const { nodes } = Astro.props;
+
+const root = bonsai ? bonsai.root : '';
+const tree = bonsai ? bonsai.tree : [];
+---
+<!-- from: https://stackoverflow.com/questions/74126716/how-to-self-reference-astro-component -->
+<ul class="branch">
+	{nodes.map(node =>
+		<li>
+			{node.url ?
+				<a class="wiki" href={node.url}>{node.text}</a>
+				:
+				<a class="invalid">{node.text}</a>
+			}
+			<Astro.self nodes={node.children.map(child =>
+				tree.find(treeNode => treeNode.text == child)
+			)} />
+		</li>
+	)}
+</ul>

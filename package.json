@@ -2,6 +2,16 @@
   "name": "astro-wikibonsai",
   "type": "module",
   "version": "0.0.1",
+  "description": "A starter project for a WikiBonsai digital garden using the Astro static site generator.",
+  "license": "MIT",
+  "author": {
+    "name": "manunamz",
+    "email": "manuanmz@pm.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wikibonsai/astro-wikibonsai"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,6 +23,13 @@
     "@astrojs/mdx": "^1.1.0",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/sitemap": "^3.0.0",
-    "astro": "^3.1.4"
+    "astro": "^3.1.4",
+    "fast-glob": "^3.3.1",
+    "gray-matter": "^4.0.3",
+    "remark-caml": "^0.0.5-rm",
+    "remark-wikirefs": "^0.0.6-rm",
+    "semtree": "^0.0.2",
+    "unist-util-select": "^5.0.0",
+    "wikirefs": "^0.0.4"
   }
 }

@@ -1,12 +1,10 @@
-# Astro Starter Kit: Blog
+# Astro-WikiBonsai
 
-```sh
-npm create astro@latest -- --template blog
-```
+[![A WikiBonsai Project](https://img.shields.io/badge/%F0%9F%8E%8B-A%20WikiBonsai%20Project-brightgreen)](https://github.com/wikibonsai/wikibonsai)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+An [Astro base blog](https://github.com/withastro/astro/tree/main/examples/blog) with [wikibonsai](https://github.com/wikibonsai/wikibonsai) support.
+
+💐 Display your [🎋 WikiBonsai](https://github.com/wikibonsai/wikibonsai) digital garden for others.
 
 > 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
@@ -37,6 +35,12 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── package.json
 └── tsconfig.json
 ```
+
+#todo
+
+- entries
+- index
+  - when defining the tree in 'i.bonsai.md', be sure there is a single root node so that the entire tree is processed properly.
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 

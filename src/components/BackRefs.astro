@@ -1,0 +1,77 @@
+---
+// import { getCollection } from 'astro:content';
+import { generateBackRefs } from '../wikibonsai/backrefs';
+
+const { frontmatter } = Astro.props;
+
+const res = await generateBackRefs(frontmatter.fname);
+const backattrs = res.backattrs;
+const backlinks = res.backlinks;
+---
+<style>
+	li {
+		list-style: '';
+	}
+	.back-refs {
+		padding: 2em 1em 6em 1em;
+		margin: 2em;
+		border: 1px solid #ccc!important;
+		border-radius: 25px;
+	}
+	.title {
+		color: #4F534F;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.sections {
+		display: flex;
+		align-items: start;
+		justify-content: space-evenly;
+	}
+	.section-title {
+		color: #4F534F;
+		text-align: center;
+	}
+	.attrtype {
+		padding-left: 0px;
+	}
+</style>
+<div class="back-refs">
+	<h5 class="title">Links To This Page</h5>
+	<div class="sections">
+		<div>
+			<span class="section-title">Attributes</span>
+			<ul class="attrtype">
+				{Object.entries(backattrs).map(([type, attrs]) =>
+					<li>
+						{type} :
+							<ul>
+								{attrs.map((attr: any) =>
+									<li>
+										{attr.htmlHref ?
+											<a class="wiki" href={attr.htmlHref}>{attr.htmlText}</a>
+											:
+											<a class="invalid">{attr.htmlText}</a>
+										}
+									</li>
+								)}
+							</ul>
+					</li>
+				)}
+			</ul>
+		</div>
+		<div>
+			<span class="section-title">Links</span>
+			<ul>
+				{backlinks.map((link: any) =>
+					<li>
+						{link.htmlHref ?
+							<a class="wiki" href={link.htmlHref}>{link.htmlText}{link.type ? ` (${link.type})` : ''}</a>
+							:
+							<a class="invalid">{link.htmlText}{link.linktype ? ` (${link.linktype})` : ''}</a>
+						}
+					</li>
+				)}
+			</ul>
+		</div>
+</div>

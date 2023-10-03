@@ -12,4 +12,21 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+const entries = defineCollection({
+	// Type-check frontmatter using a schema
+	schema: z.object({
+		title: z.string(),
+		// Transform string to Date object
+		pubDate: z.coerce.date().optional(),
+		updatedDate: z.coerce.date().optional(),
+	}),
+});
+
+const index = defineCollection({
+	// Type-check frontmatter using a schema
+	schema: z.object({
+		title: z.string(),
+	}),
+});
+
+export const collections = { blog, entries, index };

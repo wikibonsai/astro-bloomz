@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Branch from '../components/Branch.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { bonsai } from '../wikibonsai/semtree';
+
+const root = bonsai ? bonsai.root : '';
+const tree = bonsai ? bonsai.tree : [];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h1>Tag Map</h1>
+      <p><a href="/">{SITE_TITLE}</a></p>
+			<Branch nodes={tree.filter(node => node.text === root)} />
+		</main>
+		<Footer />
+	</body>
+</html>
