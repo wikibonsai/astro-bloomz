@@ -27,11 +27,8 @@ const ancestorNodes = ancestors.map(n => tree.find(tn => tn.text == n));
 		list-style: none;
 	}
 </style>
-<nav calss="bread-crumbs">
+<nav class="bread-crumbs">
 	<ol>
-		<li class="site-item">
-			<a href="/">{SITE_TITLE}</a>
-		</li>
 		{ancestorNodes.map(node =>
 			<li>
 				{node.url ?

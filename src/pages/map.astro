@@ -20,7 +20,6 @@ const tree = bonsai ? bonsai.tree : [];
 		<Header title={SITE_TITLE} />
 		<main>
 			<h1>Tag Map</h1>
-      <p><a href="/">{SITE_TITLE}</a></p>
 			<Branch nodes={tree.filter(node => node.text === root)} />
 		</main>
 		<Footer />
