@@ -1,7 +1,5 @@
 ---
-title: Semantic Tree
+title: SemTree
 ---
 
-This is an entry that describes the semantic tree -- also known as the "knowledge bonsai".
-
-An example of such a tree can be viewed [here](/map).
+The `semtree` package is responsible for building the [[semantic-tree]]. It can be found on [GitHub](https://github.com/wikibonsai/semtree).

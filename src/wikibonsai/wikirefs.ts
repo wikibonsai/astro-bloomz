@@ -75,7 +75,7 @@ export function resolveEmbedContent(filename: string): any {
   });
   let content: string = '';
   if (docPath === undefined) {
-    content = 'embed content not found for ' + filename;
+    content = 'Error: Content not found for ' + "'" + filename + "'";
   } else {
     const text: string | undefined = fs.readFileSync(docPath, { encoding: 'utf8', flag: 'r' });
     content = matter(text).content;
