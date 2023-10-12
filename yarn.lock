@@ -3211,10 +3211,10 @@ section-matter@^1.0.0:
     extend-shallow "^2.0.1"
     kind-of "^6.0.0"
 
-semtree@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/semtree/-/semtree-0.0.2.tgz#49f1a30d1b8f56e83d2c23ed8cb8c04cc77f9f6a"
-  integrity sha512-1iybW0+FYQRK7rRirvc7+/GkFl0ik8m6n8EXzBU9spfKT6FHkVy1b6mUfZ1or0rYd3D2E2w1dqh0UerFBxp0zw==
+semtree@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/semtree/-/semtree-0.0.4.tgz#2c22727524ad4af4e5c8758a7a7908a79b627abf"
+  integrity sha512-JUGAa9KLpFLMvPzR1+OA++wL6tGJN71LL5Z6KT5YJVYUn9kBUv2FY5SYvo4tR5aLssO+BWDyoXyMy416SeZawA==
   dependencies:
     nanoid "^3.3.4"
 

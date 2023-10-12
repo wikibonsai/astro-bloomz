@@ -5,11 +5,11 @@ import { bonsai } from '../wikibonsai/semtree';
 const { current } = Astro.props;
 
 const root = bonsai ? bonsai.root : '';
-const tree = bonsai ? bonsai.tree : [];
+const treeNodes = bonsai ? bonsai.nodes : [];
 
-const curNode = tree.find(node => node.text == current);
+const curNode = treeNodes.find(tn => tn.text == current);
 const ancestors = curNode ? curNode.ancestors : [];
-const ancestorNodes = ancestors.map(n => tree.find(tn => tn.text == n));
+const ancestorNodes = ancestors.map(an => treeNodes.find(tn => tn.text == an));
 ---
 <style>
 	ol {

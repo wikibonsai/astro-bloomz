@@ -6,7 +6,7 @@ import { bonsai } from '../wikibonsai/semtree';
 const { nodes } = Astro.props;
 
 const root = bonsai ? bonsai.root : '';
-const tree = bonsai ? bonsai.tree : [];
+const treeNodes = bonsai ? bonsai.nodes : [];
 ---
 <!-- from: https://stackoverflow.com/questions/74126716/how-to-self-reference-astro-component -->
 <ul class="branch">
@@ -18,7 +18,7 @@ const tree = bonsai ? bonsai.tree : [];
 				<a class="invalid">{node.text}</a>
 			}
 			<Astro.self nodes={node.children.map(child =>
-				tree.find(treeNode => treeNode.text == child)
+				treeNodes.find(tn => tn.text == child)
 			)} />
 		</li>
 	)}

@@ -22,14 +22,14 @@ export async function buildBonsai() {
     res = bonsai.parse(bonsaiText, rootFilename);
     // append url for template rendering and init fam metadata
     const allEntryDocs = await getCollection('entries');
-    for (const node of bonsai.tree) {
+    for (const node of bonsai.nodes) {
       const doc: any = allEntryDocs.find((doc) => path.basename(doc.id, '.md') == node.text);
       if (doc !== undefined) {
         node.url = '/entries/' + doc.slug;
       }
     }
     // uncomment if 'virtualTrunk' is set to 'false'
-    // for (const node of bonsai.tree) {
+    // for (const node of bonsai.nodes) {
     //   const doc: any = allIndexDocs.find((doc) => path.basename(doc.id, '.md') == node.text);
     //   if (doc !== undefined) {
     //     node.url = '/index/' + doc.slug;
@@ -37,7 +37,7 @@ export async function buildBonsai() {
     // }
     // uncomment in case blog posts are desired on the #tag map
     // const allBlogDocs = await getCollection('blog');
-    // for (const node of bonsai.tree) {
+    // for (const node of bonsai.nodes) {
     //   const doc: any = allBlogDocs.find((doc) => path.basename(doc.id, '.md') == node.text);
     //   if (doc !== undefined) {
     //     node.url = '/blog/' + doc.slug;

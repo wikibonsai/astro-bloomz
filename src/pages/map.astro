@@ -8,7 +8,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { bonsai } from '../wikibonsai/semtree';
 
 const root = bonsai ? bonsai.root : '';
-const tree = bonsai ? bonsai.tree : [];
+const treeNodes = bonsai ? bonsai.nodes : [];
 ---
 
 <!doctype html>
@@ -20,7 +20,7 @@ const tree = bonsai ? bonsai.tree : [];
 		<Header title={SITE_TITLE} />
 		<main>
 			<h1>Tag Map</h1>
-			<Branch nodes={tree.filter(node => node.text === root)} />
+			<Branch nodes={treeNodes.filter(tn => tn.text === root)} />
 		</main>
 		<Footer />
 	</body>
