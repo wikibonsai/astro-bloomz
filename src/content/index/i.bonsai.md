@@ -1,6 +1,5 @@
 ---
 title: Tag Map
-layout: "../../layouts/Index.astro"
 ---
 
 - [[astro-wikibonsai]]
