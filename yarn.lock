@@ -1972,18 +1972,19 @@ markdown-table@^3.0.0:
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-3.0.3.tgz#e6331d30e493127e031dd385488b5bd326e4a6bd"
   integrity sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==
 
-mdast-util-caml@^0.0.9-md:
-  version "0.0.9-md"
-  resolved "https://registry.yarnpkg.com/mdast-util-caml/-/mdast-util-caml-0.0.9-md.tgz#6a59eed9cc0f24238189a01250c7f92d3b66e369"
-  integrity sha512-O6QCON6WW9GkU+/p0NFpe8MtAWwT2b88ad9oPw/GEBNukxLipSppI+pYmTZbiCEVzsJWJaNOmXK7uBT8xzpVIQ==
+mdast-util-caml@^0.0.10-md:
+  version "0.0.10-md"
+  resolved "https://registry.yarnpkg.com/mdast-util-caml/-/mdast-util-caml-0.0.10-md.tgz#53244f677f117bdcfbdaaad31230dec8f5f9afe6"
+  integrity sha512-jbQ35K0PPk9HOQVuu8U2Z+ufa1mkvfFMZxvKo1FVcLEygmlz+JuzTpFVkc6e0egO9kdPPai1FrqBXXjcnqIz1Q==
   dependencies:
     caml-mkdn "^0.0.2"
     lodash-es "^4.17.21"
     mdast-util-from-markdown "^1.3.0"
     mdast-util-to-markdown "^1.5.0"
-    micromark-extension-caml "^0.0.5-mm"
+    micromark-extension-caml "^0.0.6-mm"
     micromark-extension-wikirefs "^0.0.3-mm"
     micromark-util-types "^1.0.2"
+    unist-util-select "^5.0.0"
 
 mdast-util-definitions@^5.0.0:
   version "5.1.2"
@@ -2183,16 +2184,17 @@ mdast-util-to-string@^3.0.0, mdast-util-to-string@^3.1.0:
   dependencies:
     "@types/mdast" "^3.0.0"
 
-mdast-util-wikirefs@^0.0.5-md:
-  version "0.0.5-md"
-  resolved "https://registry.yarnpkg.com/mdast-util-wikirefs/-/mdast-util-wikirefs-0.0.5-md.tgz#6e4785bb70aafca73e8fee7b26010229062948f3"
-  integrity sha512-5Mp8HvhmGcpPnF7C/Ug5xcuBWs8oC8oNePmQbM1cJol2tprxbL0PUQyl6IoAsCRVZdO/jIQtjCcKfZkMQ8KkWQ==
+mdast-util-wikirefs@^0.0.6-md:
+  version "0.0.6-md"
+  resolved "https://registry.yarnpkg.com/mdast-util-wikirefs/-/mdast-util-wikirefs-0.0.6-md.tgz#30bfae4fce7e688c7c2ea59c497a8c300aaafcdf"
+  integrity sha512-UB/NW4i7CqHFfQmat5yqq27OKo+pQAoUNzXRnyJtqrSm6+FIEfKUSZS68AHLEruiR0cjq1MuRZtkRP+OLQVt7w==
   dependencies:
     lodash-es "^4.17.21"
     mdast-util-from-markdown "^1.3.0"
     mdast-util-to-markdown "^1.5.0"
-    micromark-extension-wikirefs "^0.0.5-mm"
+    micromark-extension-wikirefs "^0.0.6-mm"
     micromark-util-types "^1.0.2"
+    unist-util-select "^5.0.0"
     wikirefs "^0.0.4"
 
 merge-stream@^2.0.0:
@@ -2227,10 +2229,10 @@ micromark-core-commonmark@^1.0.0, micromark-core-commonmark@^1.0.1:
     micromark-util-types "^1.0.1"
     uvu "^0.5.0"
 
-micromark-extension-caml@^0.0.5-mm:
-  version "0.0.5-mm"
-  resolved "https://registry.yarnpkg.com/micromark-extension-caml/-/micromark-extension-caml-0.0.5-mm.tgz#5754c2286d5ab5a46ae789240e48646e85c885bf"
-  integrity sha512-UgKU/iLpbdJkF59iJ4u5uQ1kEPJ6Q51Yzg6ADHFoEM1Q38zS+TOr/b4QU3oABb7jas9Tfswb3BQRC5ibfDS69Q==
+micromark-extension-caml@^0.0.6-mm:
+  version "0.0.6-mm"
+  resolved "https://registry.yarnpkg.com/micromark-extension-caml/-/micromark-extension-caml-0.0.6-mm.tgz#e22d0a39bb52563b59d810a9124e14734a0826a4"
+  integrity sha512-gNRClwhBRp8dXhOZX5tTaZi9TZ+JFObtyZYQ97gA0bxyxbgTA3nG0NRYzNM7qDnYJB+SQ7YyoLCQnjaJTA/MVw==
   dependencies:
     caml-mkdn "^0.0.2"
     lodash-es "^4.17.21"
@@ -2401,10 +2403,10 @@ micromark-extension-wikirefs@^0.0.3-mm:
     uvu "^0.5.6"
     wikirefs "^0.0.2"
 
-micromark-extension-wikirefs@^0.0.5-mm:
-  version "0.0.5-mm"
-  resolved "https://registry.yarnpkg.com/micromark-extension-wikirefs/-/micromark-extension-wikirefs-0.0.5-mm.tgz#8a8a938535ae0d034012feb6209f2b3baa28ce6c"
-  integrity sha512-v9ANJq6+me8sE5ge0C74DSRNeHXYOyj+Tzdvudboiowlt+8aivf/dz97VM6IlkZGPxxWTlYd2Kg9KMYs0AiVqQ==
+micromark-extension-wikirefs@^0.0.6-mm:
+  version "0.0.6-mm"
+  resolved "https://registry.yarnpkg.com/micromark-extension-wikirefs/-/micromark-extension-wikirefs-0.0.6-mm.tgz#d3536528bf8893620560132a0bf5a970ad305a38"
+  integrity sha512-TsCulPyCEwgiPhEAisFFlZcpmiOYB0rsHNcP2Txquhlx8tFjbntN/Tx+/Wo4uyzHYmt9RY86UxxqUrPHfFZeQw==
   dependencies:
     lodash-es "^4.17.21"
     micromark-factory-space "^1.0.0"
@@ -3042,13 +3044,13 @@ rehype@^12.0.1:
     rehype-stringify "^9.0.0"
     unified "^10.0.0"
 
-remark-caml@^0.0.5-rm:
-  version "0.0.5-rm"
-  resolved "https://registry.yarnpkg.com/remark-caml/-/remark-caml-0.0.5-rm.tgz#82a1b04a1fd5fd7a58d1728f20cd53e69731fe59"
-  integrity sha512-x3dgOs5z9hr3y8aEaXqUFuLqPE4Ltn0p0E8Ntx8m3r9B9svfNv2mmzWIWsEgAq55txr/h9BbQDXxgsStK2obvQ==
+remark-caml@^0.0.6-rm:
+  version "0.0.6-rm"
+  resolved "https://registry.yarnpkg.com/remark-caml/-/remark-caml-0.0.6-rm.tgz#485b35f78455c61ec2b777caf0ea194d500393ba"
+  integrity sha512-U+GhqwqXK48KngPqdn69qrVja94gEL3/cQe2mPtfMmVwtrBT+2d3Q9XDdgTBa7cCNJ4iDfbYWTLrHUKQhm1b2A==
   dependencies:
-    mdast-util-caml "^0.0.9-md"
-    micromark-extension-caml "^0.0.5-mm"
+    mdast-util-caml "^0.0.10-md"
+    micromark-extension-caml "^0.0.6-mm"
 
 remark-gfm@^3.0.1:
   version "3.0.1"
@@ -3096,13 +3098,13 @@ remark-smartypants@^2.0.0:
     retext-smartypants "^5.1.0"
     unist-util-visit "^4.1.0"
 
-remark-wikirefs@^0.0.6-rm:
-  version "0.0.6-rm"
-  resolved "https://registry.yarnpkg.com/remark-wikirefs/-/remark-wikirefs-0.0.6-rm.tgz#5dbf8b08768cc178360523fa51b45624ab9bd468"
-  integrity sha512-/1TGPlxO/HkkUQIYTIkXT7KVBygTm+XV8dTOjvi8RVGfD+0syKYHpFZfTyj8c9T5hsksKQNJEE6sAlvvIYDx6A==
+remark-wikirefs@^0.0.7-rm:
+  version "0.0.7-rm"
+  resolved "https://registry.yarnpkg.com/remark-wikirefs/-/remark-wikirefs-0.0.7-rm.tgz#56d9b8dc6fe4765af6708c83e75a1175aa0c0029"
+  integrity sha512-vsvM4eyARPyvQenVsU9A1QG7Ehg25Us+Z62iu5qvzCHIuOeGqlD7odJsPJI9HP/JZvdNooMV/H5fYj6lh2/enQ==
   dependencies:
-    mdast-util-wikirefs "^0.0.5-md"
-    micromark-extension-wikirefs "^0.0.5-mm"
+    mdast-util-wikirefs "^0.0.6-md"
+    micromark-extension-wikirefs "^0.0.6-mm"
 
 resolve@^1.17.0, resolve@^1.22.4:
   version "1.22.6"
