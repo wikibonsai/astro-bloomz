@@ -1,14 +1,17 @@
+import type { SemTree } from 'semtree';
+
 import { getCollection } from 'astro:content';
 import path from 'path';
-import { SemTree } from 'semtree';
+import * as semtree from 'semtree';
 
 
-export async function buildBonsai() {
+export async function buildBonsai(): Promise<SemTree | undefined> {
   // init vars
-  const bonsai = new SemTree({
+  const opts = {
     // if set to 'false', make sure to extract urls of index docs below
     virtualTrunk: true,
-  });
+    // semtree options: https://github.com/wikibonsai/semtree?tab=readme-ov-file#options
+  };
   const bonsaiText: any = {}; // { filename: content } hash
   const rootFilename: string = 'i.bonsai';
   // build 'bonsaiText' hash
@@ -16,46 +19,54 @@ export async function buildBonsai() {
   allIndexDocs.forEach((doc: any) => {                  // remove preceding/trailing newlines/whitespace
     bonsaiText[path.basename(doc.id, '.md')] = doc.body.replace(/^\s+|\s+$/g, '');
   });
-  let res;
+  let bonsai: SemTree | string = 'uninitialized bonsai';
   try {
     // build bonsai tree data struct
-    res = bonsai.parse(bonsaiText, rootFilename);
-    // append url for template rendering and init fam metadata
-    const allEntryDocs = await getCollection('entries');
-    for (const node of bonsai.nodes) {
-      const doc: any = allEntryDocs.find((doc) => path.basename(doc.id, '.md') == node.text);
-      if (doc !== undefined) {
-        node.url = '/entries/' + doc.slug;
+    bonsai = semtree.create(rootFilename, bonsaiText, opts);
+    if (typeof bonsai === 'string') {
+      throw new Error(bonsai);
+    } else {
+      // append url for template rendering and init fam metadata
+      const allEntryDocs = await getCollection('entries');
+      for (const node of bonsai.nodes) {
+        const doc: any = allEntryDocs.find((doc) => path.basename(doc.id, '.md') == node.text);
+        if (doc !== undefined) {
+          node.url = '/entries/' + doc.slug;
+        }
       }
+      // uncomment if 'virtualTrunk' is set to 'false'
+      // for (const node of bonsai.nodes) {
+      //   const doc: any = allIndexDocs.find((doc) => path.basename(doc.id, '.md') == node.text);
+      //   if (doc !== undefined) {
+      //     node.url = '/index/' + doc.slug;
+      //   }
+      // }
+      // uncomment in case blog posts are desired on the #tag map
+      // const allBlogDocs = await getCollection('blog');
+      // for (const node of bonsai.nodes) {
+      //   const doc: any = allBlogDocs.find((doc) => path.basename(doc.id, '.md') == node.text);
+      //   if (doc !== undefined) {
+      //     node.url = '/blog/' + doc.slug;
+      //   }
+      // }
+      console.log('bonsai: \n'
+        + '\n---\n'
+        + 'root: ' + bonsai.root
+        + '\n---\n'
+        + 'trunk: ' + bonsai.trunk
+        + '\n---\n'
+        + 'petioleMap: ' + JSON.stringify(bonsai.petioleMap)
+        + '\n---\n'
+        + 'orphans: ' + bonsai.orphans
+        + '\n---\n'
+        + 'nodes: ' + JSON.stringify(bonsai.nodes)
+        + '\n---\n'
+      );
+      return bonsai;
     }
-    // uncomment if 'virtualTrunk' is set to 'false'
-    // for (const node of bonsai.nodes) {
-    //   const doc: any = allIndexDocs.find((doc) => path.basename(doc.id, '.md') == node.text);
-    //   if (doc !== undefined) {
-    //     node.url = '/index/' + doc.slug;
-    //   }
-    // }
-    // uncomment in case blog posts are desired on the #tag map
-    // const allBlogDocs = await getCollection('blog');
-    // for (const node of bonsai.nodes) {
-    //   const doc: any = allBlogDocs.find((doc) => path.basename(doc.id, '.md') == node.text);
-    //   if (doc !== undefined) {
-    //     node.url = '/blog/' + doc.slug;
-    //   }
-    // }
-    return bonsai;
   } catch (e) {
-    console.error(e, res);
-  }
-  if (bonsai.duplicates.length > 0) {
-    console.log('bonsai duplicates: ' + bonsai.duplicates);
-  } else {
-    console.log('bonsai: \n'
-      + 'res: ' + JSON.stringify(res) + '\n'
-      + 'root: ' + bonsai.root + '\n'
-      + 'duplicates: ' + bonsai.duplicates
-    );
+    console.error(e, bonsai);
   }
 }
 
-export const bonsai = await buildBonsai();
+export const bonsai: SemTree | undefined = await buildBonsai();

@@ -2676,7 +2676,7 @@ ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
   integrity sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==
 
-nanoid@^3.3.4, nanoid@^3.3.6:
+nanoid@^3.3.6:
   version "3.3.6"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.6.tgz#443380c856d6e9f9824267d960b4236ad583ea4c"
   integrity sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==
@@ -3211,12 +3211,14 @@ section-matter@^1.0.0:
     extend-shallow "^2.0.1"
     kind-of "^6.0.0"
 
-semtree@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/semtree/-/semtree-0.0.4.tgz#2c22727524ad4af4e5c8758a7a7908a79b627abf"
-  integrity sha512-JUGAa9KLpFLMvPzR1+OA++wL6tGJN71LL5Z6KT5YJVYUn9kBUv2FY5SYvo4tR5aLssO+BWDyoXyMy416SeZawA==
+semtree@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/semtree/-/semtree-0.0.12.tgz#a942285774b37862383fb51604359cee49d8a477"
+  integrity sha512-CAsJk4DwmVcr8hsxSXYH3rQNVkr0tAepO5FnJ3T3v8unZ6hhWKI0PWmGiaIPx+S/uti8BExUZDpA3jmQXij9Tg==
   dependencies:
-    nanoid "^3.3.4"
+    caml-mkdn "^0.0.2"
+    gray-matter "^4.0.3"
+    wikirefs "^0.0.5"
 
 semver@^6.3.1:
   version "6.3.1"
@@ -3818,6 +3820,13 @@ wikirefs@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/wikirefs/-/wikirefs-0.0.4.tgz#edf0163c15e72e644fc6e36339b7fa4d362cd811"
   integrity sha512-R4rKxGToR5ejpNKVfTOzhcKHvWR+4F3WaAy+ACWvDiDIrspWjabXdepWSYrbnrBlzorjMVUT98KVw9nJi8UAMQ==
+  dependencies:
+    escape-mkdn "^0.0.3"
+
+wikirefs@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/wikirefs/-/wikirefs-0.0.5.tgz#78a097a72ac6a0a5215c9be753c9e27643d70a17"
+  integrity sha512-wxGl7+XC+f4/dfhf9Z2J+dozgHDZoKvX6UpHRohQyTKDHIxfFMdoN3pDx9ySFNG5vC0xQXF9iIfPhLUwKXjXVg==
   dependencies:
     escape-mkdn "^0.0.3"
 
