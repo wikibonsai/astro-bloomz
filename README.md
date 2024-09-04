@@ -4,7 +4,7 @@
 
 An [Astro base blog](https://github.com/withastro/astro/tree/main/examples/blog) with [wikibonsai](https://github.com/wikibonsai/wikibonsai) support.
 
-You can see the live demo [here](https://astro-wikibonsai.netlify.com/).
+You can see the live demo [here](https://astro-wikibonsai.netlify.app/).
 
 💐 Display your [🎋 WikiBonsai](https://github.com/wikibonsai/wikibonsai) digital garden for others.
 
