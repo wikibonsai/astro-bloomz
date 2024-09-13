@@ -105,7 +105,7 @@ unprefixed-wikiattr-list ::
 - [[zombie-1]]
 - [[zombie-2]]
 
-#### An Unprefixed WikiAttr
+#### An Unprefixed WikiAttr  (see attrbox for render)
 
 ```markdown
 zombie-wikiattr::[[zombie]]
@@ -113,7 +113,7 @@ zombie-wikiattr::[[zombie]]
 
 zombie-wikiattr::[[zombie]]
 
-#### An Unprefixed WikiAttr List
+#### An Unprefixed WikiAttr List  (see attrbox for render)
 
 ```markdown
 zombie-wikiattr-list :: 
