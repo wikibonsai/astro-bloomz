@@ -192,10 +192,10 @@ Lists:
 #### Weblink
 
 ```markdown
-[Weblink](https://astro-wikibonsai.netlify.app)
+[Weblink](https://astro-bloomz.netlify.app)
 ```
 
-[Weblink](https://astro-wikibonsai.netlify.app)
+[Weblink](https://astro-bloomz.netlify.app)
 
 #### Code Block:
 

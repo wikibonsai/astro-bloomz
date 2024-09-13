@@ -30,7 +30,7 @@ remarkPlugins[1][1].resolveEmbedContent = resolveEmbedContent;
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://astro-wikibonsai.netlify.app',
+	site: 'https://astro-bloomz.netlify.app',
 	integrations: [
 		sitemap(),
 	],

@@ -2,7 +2,7 @@
 title: Tag Map
 ---
 
-- [[astro-wikibonsai]]
+- [[astro-bloomz]]
   - [[test]]
     - [[test-render]]
   - [[digital-garden]]

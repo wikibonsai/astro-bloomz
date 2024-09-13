@@ -1,7 +1,7 @@
 {
-  "name": "astro-wikibonsai",
+  "name": "astro-bloomz",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A starter project for a WikiBonsai digital garden using the Astro static site generator.",
   "license": "MIT",
   "author": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wikibonsai/astro-wikibonsai"
+    "url": "https://github.com/wikibonsai/astro-bloomz"
   },
   "scripts": {
     "dev": "astro dev",

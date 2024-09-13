@@ -1,19 +1,24 @@
-# Astro-WikiBonsai
+# Astro-Bloomz
 
 [![A WikiBonsai Project](https://img.shields.io/badge/%F0%9F%8E%8B-A%20WikiBonsai%20Project-brightgreen)](https://github.com/wikibonsai/wikibonsai)
 
-An [Astro base blog](https://github.com/withastro/astro/tree/main/examples/blog) with [wikibonsai](https://github.com/wikibonsai/wikibonsai) support.
+<p align="center">
+  <img src="./public/Astro.svg" width="150" height="150"/>
+  <img src="./public/bloomz.svg" width="150" height="150"/>
+</p>
 
-You can see the live demo [here](https://astro-wikibonsai.netlify.app/).
+An [Astro template](https://github.com/withastro/astro/tree/main/examples/blog) with [WikiBonsai](https://github.com/wikibonsai/wikibonsai) support.
 
-💐 Display your [🎋 WikiBonsai](https://github.com/wikibonsai/wikibonsai) digital garden for others.
+You can see the live demo [here](https://astro-bloomz.netlify.app/).
+
+🌸 Share bloomz from your [🎋 WikiBonsai](https://github.com/wikibonsai/wikibonsai) digital garden.
 
 ## Getting Started
 
 ### 1. Clone this Repository
 
 ```
-git clone https://github.com/wikibonsai/astro-wikibonsai.git my-blog-name
+git clone https://github.com/wikibonsai/astro-bloomz.git my-blog-name
 ```
 
 ### 2. Navigate to the directory
@@ -36,7 +41,7 @@ npm run dev
 
 ## 🪴 Project Structure
 
-Inside of your Astro-Wikibonsai project, you'll see the following folders and files:
+Inside of your Astro-Bloomz project, you'll see the following folders and files:
 
 ```text
 ├── public/
