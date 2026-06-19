@@ -8,7 +8,7 @@ const root = bonsai ? bonsai.root : '';
 const treeNodes = bonsai ? bonsai.nodes : [];
 
 const curNode = treeNodes.find(tn => tn.text == current);
-const ancestors = curNode ? curNode.ancestors : [];
+const ancestors = curNode ? curNode.ancestors.filter(a => a !== root) : [];
 const ancestorNodes = ancestors.map(an => treeNodes.find(tn => tn.text == an));
 ---
 <style>

@@ -11,7 +11,7 @@ This is a page is for testing and showcasing the markdown styles in this templat
 
 ### WikiRefs
 
-#### A Prefixed WikiAttr (see attrbox for output)
+#### A Prefixed WikiAttr
 
 ```markdown
 :prefixed-wikiattr::[[wikirefs]]
@@ -19,7 +19,9 @@ This is a page is for testing and showcasing the markdown styles in this templat
 
 :prefixed-wikiattr::[[wikirefs]]
 
-#### A Prefixed WikiAttr List (see attrbox for output)
+(see attrbox for output)
+
+#### A Prefixed WikiAttr List
 
 ```markdown
 : prefixed-wikiattr-list :: 
@@ -31,7 +33,9 @@ This is a page is for testing and showcasing the markdown styles in this templat
 - [[wikirefs]]
 - [[feedback]]
 
-#### An Unprefixed WikiAttr (see attrbox for render)
+(see attrbox for output)
+
+#### An Unprefixed WikiAttr
 
 ```markdown
 unprefixed-wikiattr::[[wikirefs]]
@@ -39,7 +43,9 @@ unprefixed-wikiattr::[[wikirefs]]
 
 unprefixed-wikiattr::[[wikirefs]]
 
-#### An Unprefixed WikiAttr List (see attrbox for render)
+(see attrbox for render)
+
+#### An Unprefixed WikiAttr List
 
 ```markdown
 unprefixed-wikiattr-list :: 
@@ -50,6 +56,8 @@ unprefixed-wikiattr-list ::
 unprefixed-wikiattr-list :: 
 - [[wikirefs]]
 - [[feedback]]
+
+(see attrbox for render)
 
 #### A WikiLink
 
@@ -59,13 +67,15 @@ unprefixed-wikiattr-list ::
 
 [[digital-garden]]
 
-#### A Typed WikiLink (check html for linktype css class)
+#### A Typed WikiLink
 
 ```markdown
 :typed-wikilink::[[digital-garden]].
 ```
 
 :typed-wikilink::[[digital-garden]].
+
+(check html for linktype css class)
 
 #### A WikiEmbed (Markdown)
 
@@ -85,7 +95,7 @@ unprefixed-wikiattr-list ::
 
 #### Zombies
 
-#### A Prefixed WikiAttr (see attrbox for render)
+#### A Prefixed WikiAttr
 
 ```markdown
 :zombie-wikiattr::[[zombie]]
@@ -93,7 +103,9 @@ unprefixed-wikiattr-list ::
 
 :zombie-wikiattr::[[zombie]]
 
-#### A Prefixed WikiAttr List (see attrbox for render)
+(see attrbox for render)
+
+#### A Prefixed WikiAttr List
 
 ```markdown
 : zombie-wikiattr-list :: 
@@ -105,7 +117,9 @@ unprefixed-wikiattr-list ::
 - [[zombie-1]]
 - [[zombie-2]]
 
-#### An Unprefixed WikiAttr  (see attrbox for render)
+(see attrbox for render)
+
+#### An Unprefixed WikiAttr
 
 ```markdown
 zombie-wikiattr::[[zombie]]
@@ -113,7 +127,9 @@ zombie-wikiattr::[[zombie]]
 
 zombie-wikiattr::[[zombie]]
 
-#### An Unprefixed WikiAttr List  (see attrbox for render)
+(see attrbox for render)
+
+#### An Unprefixed WikiAttr List
 
 ```markdown
 zombie-wikiattr-list :: 
@@ -124,6 +140,8 @@ zombie-wikiattr-list ::
 zombie-wikiattr-list :: 
 - [[zombie-1]]
 - [[zombie-2]]
+
+(see attrbox for render)
 
 #### A WikiLink
 
@@ -148,6 +166,111 @@ zombie-wikiattr-list ::
 ```
 
 ![[zombie]]
+
+#### Multi-Line String (Folded)
+
+```markdown
+:description:: >
+  This is a long description
+  that spans multiple lines
+  and gets folded into one.
+```
+
+:description:: >
+  This is a long description
+  that spans multiple lines
+  and gets folded into one.
+
+(see attrbox for output)
+
+#### Multi-Line String (Literal)
+
+```markdown
+:poem:: |
+  roses are red
+  violets are blue
+  wikis are neat
+  and bonsais are too
+```
+
+:poem:: |
+  roses are red
+  violets are blue
+  wikis are neat
+  and bonsais are too
+
+(see attrbox for output)
+
+#### Multi-Line String (Folded Strip)
+
+```markdown
+:summary:: >-
+  No trailing newline
+  in the output.
+```
+
+:summary:: >-
+  No trailing newline
+  in the output.
+
+(see attrbox for output)
+
+#### Multi-Line String (Literal Strip)
+
+```markdown
+:code-snippet:: |-
+  line one
+  line two
+```
+
+:code-snippet:: |-
+  line one
+  line two
+
+(see attrbox for output)
+
+#### Multi-Line String (Literal Keep)
+
+```markdown
+:preserved:: |+
+  keeps all
+  trailing newlines
+
+```
+
+:preserved:: |+
+  keeps all
+  trailing newlines
+
+(see attrbox for output)
+
+#### Mixed Wiki + Primitive Types (Comma)
+
+```markdown
+:contributors::[[wikirefs]], [[feedback]], 2
+```
+
+:contributors::[[wikirefs]], [[feedback]], 2
+
+(see attrbox for output)
+
+#### Mixed Wiki + Primitive Types (List)
+
+```markdown
+:metadata::
+- [[wikirefs]]
+- true
+- 3.14
+- a plain string
+```
+
+:metadata::
+- [[wikirefs]]
+- true
+- 3.14
+- a plain string
+
+(see attrbox for output)
 
 #### Headers
 

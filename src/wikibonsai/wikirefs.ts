@@ -30,6 +30,8 @@ export function createResolveEmbedContent(remarkPlugins: any[]) {
   }
 
   return function resolveEmbedContentInternal(filename: string): any {
+    // guard: filename must be defined
+    if (!filename) { return; }
     // markdown-only
     if (wikirefs.isMedia(filename)) { return; }
     // cycle detection
