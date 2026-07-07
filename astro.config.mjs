@@ -16,6 +16,10 @@ const remarkPlugins = [
 	[
 		remarkWikiRefs,
 		{
+			// caml owns the attrbox; disable wikirefs' redundant attr-BLOCK parsing
+			// (avoids duplicate attrbox-data). wikirefs still resolves the wiki VALUES
+			// inside caml's attrbox via its enrich transformer. See caml-wikiref-enrich-seam.
+			attrs: { enable: false },
 			resolveHtmlHref: resolveHtmlHref,
 			resolveHtmlText: resolveHtmlText,
 			resolveEmbedContent: null, // we'll set this later -- see below

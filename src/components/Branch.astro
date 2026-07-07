@@ -15,7 +15,7 @@ const treeNodes = bonsai ? bonsai.nodes : [];
 			{node.url ?
 				<a class="wiki" href={node.url}>{node.text}</a>
 				:
-				<a class="invalid">{node.text}</a>
+				<a class="wiki invalid">{node.text}</a>
 			}
 			<Astro.self nodes={node.children.map(child =>
 				treeNodes.find(tn => tn.text == child)

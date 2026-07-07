@@ -51,7 +51,7 @@ const backlinks = res.backlinks;
 										{attr.htmlHref ?
 											<a class="wiki" href={attr.htmlHref}>{attr.htmlText}</a>
 											:
-											<a class="invalid">{attr.htmlText}</a>
+											<a class="wiki invalid">{attr.htmlText}</a>
 										}
 									</li>
 								)}
@@ -68,7 +68,7 @@ const backlinks = res.backlinks;
 						{link.htmlHref ?
 							<a class="wiki" href={link.htmlHref}>{link.htmlText}{link.type ? ` (${link.type})` : ''}</a>
 							:
-							<a class="invalid">{link.htmlText}{link.linktype ? ` (${link.linktype})` : ''}</a>
+							<a class="wiki invalid">{link.htmlText}{link.linktype ? ` (${link.linktype})` : ''}</a>
 						}
 					</li>
 				)}
