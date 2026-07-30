@@ -280,8 +280,8 @@ a.wiki.invalid {
   position: relative;
   border: 1px solid var(--wb-syntax-bracket, #8aaa9a);
   border-radius: 6px;
-  padding: 5px 20px 15px;
-  margin: 0 20px;
+  padding: 5px 20px 12px;
+  margin: 1em 20px;
 }
 .embed-title {
   width: 100%;
@@ -312,7 +312,18 @@ a.wiki.invalid {
 .embed-content {
   max-height: 500px;
   overflow-y: auto;
-  padding-right: 10px;
+  /* top gap between title and body; bottom gap comes from the wrapper's 12px */
+  padding: 12px 10px 0 0;
+}
+/* strip the first/last paragraph's edge margins so the above/below gaps are
+   controlled by padding (12px title→body, 12px body→border) — otherwise the
+   last <p>'s bottom margin compounds with the wrapper padding and the bottom
+   gap reads ~2x the top. */
+.embed-content > :first-child {
+  margin-top: 0;
+}
+.embed-content > :last-child {
+  margin-bottom: 0;
 }
 .embed-media {
   display: flex;
