@@ -29,7 +29,11 @@ export function createResolveEmbedContent(remarkPlugins: any[]) {
     // note: we're not using remarkRehype or rehypeStringify here
   }
 
-  return function resolveEmbedContentInternal(filename: string): any {
+  // note: the parser (mdast-util-wikirefs) calls this as (env, filename, hText) — the
+  // leading env arg MUST be in the signature or `filename` lands undefined and every
+  // embed falls through to the "Content not found" error. (header-section extraction
+  // via hText is a #todo — no embed here targets a header yet.)
+  return function resolveEmbedContentInternal(_env: any, filename: string, _hText?: string | undefined): any {
     // guard: filename must be defined
     if (!filename) { return; }
     // markdown-only
